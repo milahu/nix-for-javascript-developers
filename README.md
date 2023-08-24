@@ -104,7 +104,7 @@ If you want to have `nix eval` available in nixos stable, you need to install un
 | --- | --- |
 | `builtins.attrNames {a=1;}` | `Object.keys({a:1})` |
 | `builtins.attrValues {a=1;}` | `Object.values({a:1})` |
-| `builtins.attrValues {a=1;}` | `Object.entries({a:1})` |
+| `lib.mapAttrsToList (k: v: [k v]) {a=1;}` | `Object.entries({a:1})` |
 | `builtins.mapAttrs (k: v: v) {a=1;}` | `Object.fromEntries(Object.entries({a:1}).map(([k, v]) => [k, v]))` |
 | `builtins.listToAttrs [ {name="a"; value=1;} ]` | `Object.fromEntries(["a", 1])` |
 | `lib.mapAttrsToList (k: v: v) {a=1;}` | `Object.entries({a:1}).map(([k, v]) => v)` |
