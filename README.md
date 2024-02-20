@@ -18,6 +18,18 @@ $ node -e 'console.log(((x, y) => ({ a: x + "-" + y }))("a", "b"))'
 
 If you want to have `nix eval` available in nixos stable, you need to install unstable nix command as described in https://nixos.wiki/wiki/Flakes.
 
+To see complex values in the Nix REPL, use `lib.traceValSeqN`
+
+```
+nix-repl> lib.traceValSeqN 2 [[1 [2]]]
+trace: [
+  [
+    1
+    […]
+  ]
+]
+[ [ ... ] ]
+```
 
 ## Examples
 
