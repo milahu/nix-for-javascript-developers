@@ -120,6 +120,7 @@ trace: [
 | `builtins.mapAttrs (k: v: v) {a=1;}` | `Object.fromEntries(Object.entries({a:1}).map(([k, v]) => [k, v]))` |
 | `builtins.listToAttrs [ {name="a"; value=1;} ]` | `Object.fromEntries(["a", 1])` |
 | `lib.mapAttrsToList (k: v: v) {a=1;}` | `Object.entries({a:1}).map(([k, v]) => v)` |
+| `lib.filterAttrs (k: v: true) {a=1;}` | `Object.fromEntries(Object.entries({a:1}).filter(([k, v]) => true))` |
 | `builtins.hasAttr "a" {a=1;}` | `Object.hasOwn({a:1}, "a") == "a" in {a:1}` |
 | `{a=1;}.a` | `{a:1}.a` |
 | `{a=1;}.${"a"}` | `{a:1}["a"]` |
