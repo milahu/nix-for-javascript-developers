@@ -81,6 +81,7 @@ trace: [
 | `builtins.replaceStrings ["a"] ["b"] "aa"` | `"aa".replace(/a/g, "b")` |
 | `builtins.fromJSON ''[0, 1, 2]''` | ``JSON.parse(`[0, 1, 2]`)`` |
 | `builtins.toJSON [0 1 2]` | `JSON.stringify([0, 1, 2])` |
+| `"x=${builtins.toString 1}"` | <code>\`x=${1}\`</code> |
 | `builtins.getEnv "HOME"` | `require("process").env["HOME"]` |
 | `let stringIndexOf = string: needle: let parts = builtins.split needle string; in if builtins.length parts == 1 then -1 else builtins.stringLength (builtins.elemAt parts 0); in stringIndexOf "abbbc" "b"` | `"abbbc".indexOf("b")` |
 | `builtins.substring 2 1 "abcde"` | `"abcde".substr(2, 1)` |
