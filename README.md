@@ -73,6 +73,7 @@ trace: [
 | --- | --- |
 | `builtins.stringLength "abc"` | `"abc".length` |
 | `builtins.concatStringsSep "\n" ["a" "b" "c"]` | `["a", "b", "c"].join("\n")` |
+| `lib.concatMapStringsSep "\n" (s: "${s}x") ["a" "b" "c"]` | ```["a", "b", "c"].map(s => `${s}x`).join("\n")``` |
 | `lib.splitString "/" "a/b/c"` | `"a/b/c".split("/")` |
 | `lib.flatten (builtins.split "/+" "//a/b")` | `"//a/b".split(/\/+/)` |
 | `builtins.match "[a-z]" "a" != null` | `/[a-z]/.test("a")` |
