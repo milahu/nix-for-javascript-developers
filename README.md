@@ -122,7 +122,7 @@ trace: [
 | `builtins.attrValues {a=1;}` | `Object.values({a:1})` |
 | `lib.mapAttrsToList (k: v: [k v]) {a=1;}` | `Object.entries({a:1})` |
 | `lib.attrsToList {a=1;}` | `Object.entries({a:1}).map(([k, v]) => ({name: k, value: v}))` |
-| `builtins.mapAttrs (k: v: v) {a=1;}` | `Object.fromEntries(Object.entries({a:1}).map(([k, v]) => [k, v]))` |
+| `builtins.mapAttrs (k: v: v) {a=1;}` | `Object.fromEntries(Object.entries({a:1}).map(([_k, v]) => [_k, v]))` |
 | `builtins.listToAttrs [ {name="a"; value=1;} ]` | `Object.fromEntries(["a", 1])` |
 | `lib.mapAttrsToList (k: v: v) {a=1;}` | `Object.entries({a:1}).map(([k, v]) => v)` |
 | `lib.filterAttrs (k: v: true) {a=1;}` | `Object.fromEntries(Object.entries({a:1}).filter(([k, v]) => true))` |
