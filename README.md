@@ -92,6 +92,8 @@ trace: [
 | `let stringIndexOfFirstSpace = string: let matches = builtins.match "([^[:space:]]*)([[:space:]]).*" string; in if matches == null then -1 else builtins.stringLength (builtins.elemAt matches 0); in stringIndexOfFirstSpace "a \n\tb c"` | `var m = /\s/.exec("a \n\tb c"); m ? m.index : -1` |
 | `lib.escapeShellArg "a\nb"` | <code>require("[shlex](https://www.npmjs.com/package/shlex)").quote("a\nb")</code> |
 | `lib.escapeShellArgs ["a" "b c"]` | <code>require("[shlex](https://www.npmjs.com/package/shlex)").join(["a", "b c"])</code> |
+| `lib.toUpper "abc"` | `"abc".toUpperCase()` |
+| `lib.toLower "ABC"` | `"ABC".toLowerCase()` |
 
 ### Arrays
 
