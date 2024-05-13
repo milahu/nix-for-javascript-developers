@@ -51,6 +51,8 @@ trace: [
 | `builtins.bitXor 2 3` | `2 ^ 3` |
 | `lib.strings.charToInt "a"` | `"a".charCodeAt(0)` |
 | `lib.strings.toInt "1"` | `parseInt("1")` |
+| `lib.min 1 2` | `Math.min(1, 2)` |
+| `lib.max 1 2` | `Math.max(1, 2)` |
 
 ### Functions
 
