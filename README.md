@@ -49,6 +49,7 @@ trace: [
 | `builtins.bitAnd 2 3` | `2 & 3` |
 | `builtins.bitOr 2 3` | `2 \| 3` |
 | `builtins.bitXor 2 3` | `2 ^ 3` |
+| `lib.strings.charToInt "a"` | `"a".charCodeAt(0)` |
 
 ### Functions
 
