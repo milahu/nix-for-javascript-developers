@@ -51,6 +51,7 @@ trace: [
 | `builtins.bitXor 2 3` | `2 ^ 3` |
 | `lib.strings.charToInt "a"` | `"a".charCodeAt(0)` |
 | `lib.strings.toInt "1"` | `parseInt("1")` |
+| `let toFloat = s: if builtins.match "[[:space:]]*(-?([[:digit:]]+\\.[[:digit:]]*|[[:digit:]]*\\.[[:digit:]]+|[[:digit:]]+)([eE][[:digit:]]+)?)[[:space:]]*" s != null then builtins.fromJSON s else throw "not a number: ${builtins.toJSON s}"; in toFloat "-1.234e50"` | `parseFloat("-1.234e50")` |
 | `lib.min 1 2` | `Math.min(1, 2)` |
 | `lib.max 1 2` | `Math.max(1, 2)` |
 
