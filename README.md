@@ -80,8 +80,8 @@ trace: [
 | `lib.concatMapStringsSep "\n" (s: "${s}x") ["a" "b" "c"]` | ```["a", "b", "c"].map(s => `${s}x`).join("\n")``` |
 | `lib.splitString "/" "a/b/c"` | `"a/b/c".split("/")` |
 | `lib.flatten (builtins.split "/+" "//a/b")` | `"//a/b".split(/\/+/)` |
-| `builtins.match "[a-z]" "a" != null` | `/[a-z]/.test("a")` |
-| `builtins.elemAt (builtins.match ".*([a-z]).*" "-a-") 0` | `"-a-".match(/.*([a-z]).*/)[1]` |
+| `builtins.match "[a-z]" "a" != null` | `/^[a-z]$/.test("a")` |
+| `builtins.elemAt (builtins.match ".*([a-z]).*" "-a-") 0` | `"-a-".match(/^.*([a-z]).*$/)[1]` |
 | `lib.flatten (builtins.match "(a) (b)" "a b")` | `"a b".match(/^(a) (b)$/).slice(1)` |
 | `builtins.replaceStrings ["a"] ["b"] "aa"` | `"aa".replace(/a/g, "b")` |
 | `builtins.fromJSON ''[0, 1, 2]''` | ``JSON.parse(`[0, 1, 2]`)`` |
