@@ -99,6 +99,7 @@ trace: [
 | `lib.escapeShellArgs ["a" "b c"]` | <code>require("[shlex](https://www.npmjs.com/package/shlex)").join(["a", "b c"])</code> |
 | `lib.toUpper "abc"` | `"abc".toUpperCase()` |
 | `lib.toLower "ABC"` | `"ABC".toLowerCase()` |
+| `lib.fixedWidthString 4 "0" (builtins.toString 1)` | `String(1).padStart(4, "0")` |
 
 ### Arrays
 
